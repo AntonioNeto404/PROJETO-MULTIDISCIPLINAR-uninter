@@ -1,0 +1,1058 @@
+{
+	"info": {
+		"_postman_id": "34fac237-f68a-4c19-8c8d-72b22a5610f8",
+		"name": "VidaPlus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30201252"
+	},
+	"item": [
+		{
+			"name": "Hospital",
+			"item": [
+				{
+					"name": "Cria Unidade",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Hospital Lauro\",\n  \"endereco\": \"Av. Saúde, 123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/hospital",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"hospital"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualiza Unidade",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Hospital Lauro\",\n  \"endereco\": \"Av. dos Hospitais, 123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/hospital",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"hospital"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca todas as Unidades",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAwN2NlNjBiLTBiYzQtNGY2MC05Yzc0LWVkY2I2YmJkNzUwNCIsImNhcmdvIjoiQWRtaW5pc3RyYWRvciIsImlhdCI6MTc1NDk1Mzk5OSwiZXhwIjoxNzU1MDQwMzk5fQ.rj49Pi6Vtq0rZvB6jJRXmVaBKpNodSYIc6JxnHxqiSk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/hospital/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"hospital",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca todos os leitos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAwN2NlNjBiLTBiYzQtNGY2MC05Yzc0LWVkY2I2YmJkNzUwNCIsImNhcmdvIjoiQWRtaW5pc3RyYWRvciIsImlhdCI6MTc1NDk1Mzk5OSwiZXhwIjoxNzU1MDQwMzk5fQ.rj49Pi6Vtq0rZvB6jJRXmVaBKpNodSYIc6JxnHxqiSk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/hospital/leitos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"hospital",
+								"leitos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta Unidade",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3333/hospital/58210940-3057-4353-bc02-53beda2f3bb7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"hospital",
+								"58210940-3057-4353-bc02-53beda2f3bb7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Paciente",
+			"item": [
+				{
+					"name": "Cria internação",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAwN2NlNjBiLTBiYzQtNGY2MC05Yzc0LWVkY2I2YmJkNzUwNCIsImNhcmdvIjoiQWRtaW5pc3RyYWRvciIsImlhdCI6MTc1NDk1Mzk5OSwiZXhwIjoxNzU1MDQwMzk5fQ.rj49Pi6Vtq0rZvB6jJRXmVaBKpNodSYIc6JxnHxqiSk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pacienteId\": \"bc92a657-101e-4021-81d3-715f68cc3c43\",\r\n    \"unidadeId\": \"0bc488f0-210a-4bbd-813a-0dc858aa21ac\",\r\n    \"leito\": \"A1\",\r\n    \"status\": \"Internado\",\r\n    \"dataEntrada\": \"2023-01-01\",\r\n    \"dataSaida\": \"2023-01-10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/pacientes/internacao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pacientes",
+								"internacao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cria Paciente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Maicon\",\n  \"cpf\": \"01234567890\",\n  \"email\": \"maicon@email.com\",\n  \"telefone\": \"51999887766\",\n  \"dataNascimento\": \"2001-02-18\",\n  \"genero\": \"Masculino\",\n  \"unidadeId\": \"0bc488f0-210a-4bbd-813a-0dc858aa21ac\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/pacientes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pacientes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mostra Consultas",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAwN2NlNjBiLTBiYzQtNGY2MC05Yzc0LWVkY2I2YmJkNzUwNCIsImNhcmdvIjoiQWRtaW5pc3RyYWRvciIsImlhdCI6MTc1NDk1Mzk5OSwiZXhwIjoxNzU1MDQwMzk5fQ.rj49Pi6Vtq0rZvB6jJRXmVaBKpNodSYIc6JxnHxqiSk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/consulta/paciente/0db3f79b-9ab0-45c8-a2bf-ecf63278d3ee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"consulta",
+								"paciente",
+								"0db3f79b-9ab0-45c8-a2bf-ecf63278d3ee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mostra dados do paciente",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAwN2NlNjBiLTBiYzQtNGY2MC05Yzc0LWVkY2I2YmJkNzUwNCIsImNhcmdvIjoiQWRtaW5pc3RyYWRvciIsImlhdCI6MTc1NDk1Mzk5OSwiZXhwIjoxNzU1MDQwMzk5fQ.rj49Pi6Vtq0rZvB6jJRXmVaBKpNodSYIc6JxnHxqiSk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cpf\":\"01234567890\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/pacientes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pacientes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta um paciente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cpf\": \"01234567890\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/pacientes/81010fa7-16b2-4d0c-9bc1-0e6da6a61cb8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pacientes",
+								"81010fa7-16b2-4d0c-9bc1-0e6da6a61cb8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualiza dados pacientes",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"\",\n  \"cpf\": \"01234567890\",\n  \"email\": \"@email.com\",\n  \"telefone\": \"51999887766\",\n  \"dataNascimento\": \"2001-02-18\",\n  \"genero\": \"Masculino\",\n  \"unidadeId\": \"0bc488f0-210a-4bbd-813a-0dc858aa21ac\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/pacientes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pacientes",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profissional",
+			"item": [
+				{
+					"name": "Cria Profissional",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Dra. Maria\",\n  \"crm\": \"678901-SP\",\n  \"cargo\": \"Médico\",\n  \"especialidade\": \"Neurologista\",\n  \"unidadeId\": \"48b22a12-bb9f-4d12-bc2b-b0d12d3202cb\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3333/profissional",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"profissional"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualiza Profissional",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Dr. João\",\n  \"crm\": \"123456-SP\",\n  \"cargo\": \"Médico\",\n  \"especialidade\": \"Cardiologia\",\n  \"unidadeId\": \"0bc488f0-210a-4bbd-813a-0dc858aa21ac\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/profissional/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"profissional",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mostra todos profissionais",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"unidadeId\": \"48b22a12-bb9f-4d12-bc2b-b0d12d3202cb\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/profissional/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"profissional",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mostra todas consultas do profissional",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/consulta/profissional/3bd662f6-cf79-4e53-a626-5b65652629a5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"consulta",
+								"profissional",
+								"3bd662f6-cf79-4e53-a626-5b65652629a5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mostra dados do profissional",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"unidadeId\": \"0bc488f0-210a-4bbd-813a-0dc858aa21ac\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/profissional/3bd662f6-cf79-4e53-a626-5b65652629a5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"profissional",
+								"3bd662f6-cf79-4e53-a626-5b65652629a5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta um profissional",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/profissional/086db05c-2cb4-4727-a37f-b98589648e97",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"profissional",
+								"086db05c-2cb4-4727-a37f-b98589648e97"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consulta",
+			"item": [
+				{
+					"name": "Cria consulta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAwN2NlNjBiLTBiYzQtNGY2MC05Yzc0LWVkY2I2YmJkNzUwNCIsImNhcmdvIjoiQWRtaW5pc3RyYWRvciIsImlhdCI6MTc1NDk1Mzk5OSwiZXhwIjoxNzU1MDQwMzk5fQ.rj49Pi6Vtq0rZvB6jJRXmVaBKpNodSYIc6JxnHxqiSk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"pacienteId\": \"bc92a657-101e-4021-81d3-715f68cc3c43\",\n\"profissionalId\": \"c1a2b3d4-e5f6-7890-abcd-1234567890ef\",\n\"unidadeId\": \"0bc488f0-210a-4bbd-813a-0dc858aa21ac\",\n\"data\": \"2025-06-10T10:00:00.000Z\",\n\"tipo\": \"Consulta\",\n\"status\": \"Agendada\",\n\"observacoes\": \"Paciente apresentou sintomas leves de gripe.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/consulta/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"consulta",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mostra consultas",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAwN2NlNjBiLTBiYzQtNGY2MC05Yzc0LWVkY2I2YmJkNzUwNCIsImNhcmdvIjoiQWRtaW5pc3RyYWRvciIsImlhdCI6MTc1NDk1Mzk5OSwiZXhwIjoxNzU1MDQwMzk5fQ.rj49Pi6Vtq0rZvB6jJRXmVaBKpNodSYIc6JxnHxqiSk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cpf\": \"01234567890\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/pacientes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pacientes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta consulta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cpf\": \"01234567890\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/pacientes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pacientes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualiza dados da consulta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Maicon\",\n  \"cpf\": \"01232312891\",\n  \"email\": \"maicogremista@exemplo.com\",\n  \"telefone\": \"51999887733\",\n  \"dataNascimento\": \"1988-07-01\",\n  \"genero\": \"Masculino\",\n  \"unidadeId\": \"0bc488f0-210a-4bbd-813a-0dc858aa21ac\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/pacientes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pacientes",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Prontuario",
+			"item": [
+				{
+					"name": "Mostra todos prontuarios de um paciente",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAwN2NlNjBiLTBiYzQtNGY2MC05Yzc0LWVkY2I2YmJkNzUwNCIsImNhcmdvIjoiQWRtaW5pc3RyYWRvciIsImlhdCI6MTc1NDk1Mzk5OSwiZXhwIjoxNzU1MDQwMzk5fQ.rj49Pi6Vtq0rZvB6jJRXmVaBKpNodSYIc6JxnHxqiSk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/prontuario/paciente/0db3f79b-9ab0-45c8-a2bf-ecf63278d3ee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"prontuario",
+								"paciente",
+								"0db3f79b-9ab0-45c8-a2bf-ecf63278d3ee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cria prontuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAwN2NlNjBiLTBiYzQtNGY2MC05Yzc0LWVkY2I2YmJkNzUwNCIsImNhcmdvIjoiQWRtaW5pc3RyYWRvciIsImlhdCI6MTc1NDk1Mzk5OSwiZXhwIjoxNzU1MDQwMzk5fQ.rj49Pi6Vtq0rZvB6jJRXmVaBKpNodSYIc6JxnHxqiSk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"consultaId\": \"08e811d7-a18d-42d0-b22a-d0eb84fe1b1a\",\n    \"pacienteId\": \"0db3f79b-9ab0-45c8-a2bf-ecf63278d3ee\",\n    \"profissionalId\": \"c1a2b3d4-e5f6-7890-abcd-1234567890ef\",\n    \"descricao\": \"Paciente apresenta sintomas gripais.\",\n    \"prescricoes\": [\n        {\n            \"medicamento\": \"Paracetamol\",\n            \"dosagem\": \"750mg\",\n            \"observacoes\": \"Tomar a cada 8 horas\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/prontuario/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"prontuario",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta prontuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cpf\": \"01234567890\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/pacientes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pacientes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualiza prontuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAwN2NlNjBiLTBiYzQtNGY2MC05Yzc0LWVkY2I2YmJkNzUwNCIsImNhcmdvIjoiQWRtaW5pc3RyYWRvciIsImlhdCI6MTc1NDk1Mzk5OSwiZXhwIjoxNzU1MDQwMzk5fQ.rj49Pi6Vtq0rZvB6jJRXmVaBKpNodSYIc6JxnHxqiSk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"f6e5f6a7-b8c9-0123-def0-3456789012ab\",\n    \"consultaId\": \"08e811d7-a18d-42d0-b22a-d0eb84fe1b1a\",\n    \"pacienteId\": \"0db3f79b-9ab0-45c8-a2bf-ecf63278d3ee\",\n    \"profissionalId\": \"c1a2b3d4-e5f6-7890-abcd-1234567890ef\",\n    \"descricao\": \"Paciente apresenta sintomas gripais. Recomendado paracetamol\",\n    \"prescricoes\": [\n        {\n            \"medicamento\": \"Paracetamol\",\n            \"dosagem\": \"750mg\",\n            \"observacoes\": \"Tomar a cada 6 horas\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/prontuario/f6e5f6a7-b8c9-0123-def0-3456789012ab",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"prontuario",
+								"f6e5f6a7-b8c9-0123-def0-3456789012ab"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Cria usuário de acesso",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"\",\r\n    \"email\": \".com\",\r\n    \"senha\": \"teste123\",\r\n    \"confirmaSenha\": \"teste123\",\r\n    \"perfil\": \"Administrador\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/admin/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"admin",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta admin",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/admin/d45a58d2-fa20-4243-9dbe-cce3aa4ac953",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"admin",
+								"d45a58d2-fa20-4243-9dbe-cce3aa4ac953"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mostra dados do admin",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAwN2NlNjBiLTBiYzQtNGY2MC05Yzc0LWVkY2I2YmJkNzUwNCIsImNhcmdvIjoiQWRtaW5pc3RyYWRvciIsImlhdCI6MTc1NDk1Mzk5OSwiZXhwIjoxNzU1MDQwMzk5fQ.rj49Pi6Vtq0rZvB6jJRXmVaBKpNodSYIc6JxnHxqiSk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jesia12213l@email.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/admin/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"admin",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE5NDcyYTA3LTY3NTUtNGNmYy1hOWZiLTQxNGI4MTAyN2E4YyIsImlhdCI6MTc1NDc5MTY2MiwiZXhwIjoxNzU0Nzk1MjYyfQ.5fYC1k1_gSd-HIoGFn630usrbadDPzOhfLeNN8hUREI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"\",\r\n    \"email\": \".com\",\r\n    \"senha\": \"teste123\",\r\n    \"confirmaSenha\": \"teste123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/admin/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
